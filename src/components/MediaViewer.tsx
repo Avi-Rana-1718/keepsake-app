@@ -1,6 +1,5 @@
-import { GridImage } from "./GridImage";
 
-export default function MediaViewer(mediaData: any) {
+export default function MediaViewer() {
     // const {id, albumId, size, added_at, url, type} = mediaData;
 
     // return (

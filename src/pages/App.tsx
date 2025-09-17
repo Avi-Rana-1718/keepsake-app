@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { BottomNav } from "../components/BottomNav"
 import { TopNav } from "../components/TopNav"
-import { GridImage } from "@/components/GridImage";
 import { ImageMapper } from "@/components/ImageMapper";
 
 function App() {
