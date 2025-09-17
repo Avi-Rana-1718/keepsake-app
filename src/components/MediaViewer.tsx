@@ -1,16 +1,17 @@
 import { GridImage } from "./GridImage";
 
 export default function MediaViewer(mediaData: any) {
-    const {id, albumId, size, added_at, url, type} = mediaData;
+    // const {id, albumId, size, added_at, url, type} = mediaData;
 
-    return (
-        <div className="p-4 bg-black w-full h-full text-white flex flex-col justify-between items-center">
-            <div>
+    // return (
+    //     <div className="p-4 bg-black w-full h-full text-white flex flex-col justify-between items-center">
+    //         <div>
                 
-            </div>
-            <GridImage src={url} />
-        </div>
-    )
+    //         </div>
+    //         <GridImage src={url} />
+    //     </div>
+    // )
+    return <h1>Hi</h1>
 }
 
 // {
