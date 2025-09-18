@@ -1,6 +1,5 @@
 import { useRef } from "react";
-import { FaPlus } from "react-icons/fa";
-
+import { BiSolidFolderPlus } from "react-icons/bi";
 
 export function Upload() {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -50,7 +49,7 @@ export function Upload() {
                 className=""
                 aria-label="Upload"
             >
-                <FaPlus />
+                <BiSolidFolderPlus />
             </button>
         </div>
     );
