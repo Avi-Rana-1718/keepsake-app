@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BottomNav } from "../components/BottomNav"
 import { TopNav } from "../components/TopNav"
 import { ImageMapper } from "@/components/ImageMapper";
+import { redirect } from "react-router";
 
 function App() {
 
@@ -14,10 +15,12 @@ function App() {
 
   const fetchPhotos = async () => {
     try {
-      const response = await fetch('https://nook-yvgg.onrender.com/media/default', {credentials: 'include'});
-      if(response.status !== 200) {
-        console.error('Failed to fetch photos:', response.statusText);
-        return;
+      const response = await fetch('https://nook-yvgg.onrender.com/media/album/default', {credentials: 'include'});
+      if(response.status === 401) {
+        redirect('/auth');
+      }
+      if(!response.ok) {
+        throw new Error("Failed to fetch photos");
       }
       const data = await response.json();
       console.log(data);

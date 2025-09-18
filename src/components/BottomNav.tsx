@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 
 export function BottomNav() {
     return (
-        <div className="fixed bottom-0 w-full flex justify-around p-4 text-gray-600 bg-gray-50">
+        <div className="fixed bottom-0 w-full flex justify-around p-4 bg-[#303030] rounded-t-2xl">
             <Link to="/" className="flex flex-col items-center">
                 <FaImages className="text-xl" />
                 <span>Photos</span>

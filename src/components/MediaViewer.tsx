@@ -1,25 +1,37 @@
+import { DateToReadableString, GetTime } from "@/util/DateToString";
+import { FaArrowLeft, FaPlus, FaShare, FaTrash } from "react-icons/fa";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { useNavigate } from "react-router";
 
-export default function MediaViewer() {
-    // const {id, albumId, size, added_at, url, type} = mediaData;
+export default function MediaViewer({id, added_at, url}: any) {
 
-    // return (
-    //     <div className="p-4 bg-black w-full h-full text-white flex flex-col justify-between items-center">
-    //         <div>
-                
-    //         </div>
-    //         <GridImage src={url} />
-    //     </div>
-    // )
-    return <h1>Hi</h1>
+    const navigate = useNavigate()
+
+    return (
+        <div className="w-full h-screen text-white flex flex-col justify-between items-center">
+            <div className="w-full flex justify-between items-center p-4">
+                <FaArrowLeft onClick={()=>{navigate(-1)}}/>
+               <div className="text-center">
+                    <p className="text-sm">{DateToReadableString(added_at)}</p>
+                    <small>{GetTime(added_at)}</small>
+               </div>
+               <BsThreeDotsVertical />
+            </div>
+            <img src={url} alt={id} className="max-h-[70vh]" />
+            <div className="w-full p-4 flex justify-around items-center">
+                <button className="flex flex-col gap-y-1 items-center">
+                    <FaShare className="text-xl" />
+                    <span>Share</span>
+                </button>
+                <button className="flex flex-col gap-y-1 items-center">
+                    <FaPlus className="text-xl" />
+                    <span>Add</span>
+                </button>
+                <button className="flex flex-col gap-y-1 items-center">
+                    <FaTrash className="text-xl" />
+                    <span>Delete</span>
+                </button>
+            </div>
+        </div>
+    )
 }
-
-// {
-//             "id": "958a64e8-9744-497b-8b93-dd8f04ec00c6",
-//             "albumId": "default",
-//             "userId": "ab327c31-a7b7-4f42-8744-18eb56a8b3c9",
-//             "url": "https://nook-yvgg.onrender.com/static/ab327c31-a7b7-4f42-8744-18eb56a8b3c9/default/1758126064996-962332649.jpg",
-//             "size": 758926,
-//             "added_at": "2025-09-17T10:51:09.835Z",
-//             "type": "png",
-//             "is_active": true
-//         },

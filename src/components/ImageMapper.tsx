@@ -5,9 +5,9 @@ export function ImageMapper({items}: any) {
 
     if(!items || items.length == 0) return null;
 
-    console.log(items);
-
     const data = new Map<string, any>();
+    
+    items.sort((a: any, b: any) => new Date(b.added_at).getTime() - new Date(a.added_at).getTime());
     items.forEach((item: any) => {
         const time = item.added_at.split("T")[0];
         const existing = data.get(time) || [];

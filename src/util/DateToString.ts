@@ -19,3 +19,7 @@ export function DateToReadableString(date: Date | string): string {
     const year = d.getFullYear();
     return `${month} ${day}, ${year}`;
 }
+
+export function GetTime(dateTimeString: string): string {
+    return new Date(dateTimeString).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
